@@ -1,0 +1,85 @@
+
+<div class="bcimage"> 
+  <div style="height:10px"></div>
+  <div class="container-mywish" align="right">
+    <div class="btn-group" uib-dropdown>
+      <button id="btn-append-to-single-button" type="button" class="btn btn-primary regbut" uib-dropdown-toggle>
+        HI! {{username}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu pull-right" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+        <li role="menuitem"><a href="#addSpen">Add Spends</a></li>
+        <li role="menuitem"><a href="#showReport">Show Reports</a></li>
+        <li role="menuitem"><a href="#logout"><i class="fa fa-sign-out"></i>
+          Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="hgap"></div>
+
+  <div class="container-mywish main-content">
+    <div>
+
+      <form name = "spendForm"  ng-submit="editprice()" novalidate class="form-inline">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-3 ">
+            <div align="center" style="height:50px"><font size="4"> Edit Items</font></div>
+            <div ng-repeat = "x in spendtoedit.items" class="form-group">
+              <div >
+                <div align="right" ng-click = "remove($index)"><span><i class="fa fa-times"></i>
+                </span></div>
+
+                <div class="form-group">
+                  <!-- <label>Amount Spend:</label> -->
+                  <md-input-container class="md-block" flex-gt-sm="">
+                  <label>Amount Spend</label>
+                  <md-icon  class="fa fa-usd"></md-icon>
+                  <input type = "number" class="form-control" ng-model="x.amount" ng-change="calcAmount()" name="SpendAmount" min = "0" required>
+                </md-input-container>
+
+                     <!--  <span style="color:red" ng-show="spendForm.SpendAmount.$dirty && spendForm.SpendAmount.$invalid">
+                        <span ng-show="spendForm.SpendAmount.$error.required">Amount  is required.</span>
+                      </span> -->
+                    </div>
+                    <div id="asecond" class="form-group">
+
+
+                      <md-input-container class="md-block" flex-gt-sm="">
+                      <label>Spend On Item</label>
+                      <md-icon  class="fa fa-cart-plus"></md-icon>
+                      <input  class="form-control" ng-model="x.item" name="spendItem"  required>
+                    </md-input-container>
+             <!--  <span style="color:red" ng-show="spendForm.spendItem.$dirty && spendForm.spendItem.$invalid">
+                <span ng-show="spendForm.spendItem.$error.required">Amount  is required.</span>
+              </span> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="text-center"> <input type = "button" value ="Add" ng-click = "add()"/> 
+    </div>
+    <div class="gap"></div>
+    <div class="col-xs-12">
+          <div class="col-md-3 col-md-offset-3 col-xs-8">
+            <label>Total Amount Spend</label>
+          </div>
+          <div class="col-md-3 col-xs-4">
+            {{spendtoedit.totalamount}}
+          </div>  
+          </div>  
+            <div class="gap"></div>
+
+    <div align="center" >
+      <button type="submit" class="btn btn-primary text-center" ng-disabled="spendForm.$invalid" >Edit</button>
+      <a class="btn btn-primary" href="#/showReport">Cancel</a>
+    </div>
+    <div class="gap"></div>
+  </form>
+
+</div>
+
+
+</div>

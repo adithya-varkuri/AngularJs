@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- <div align="center" class="bcimage" style="height:100px">
+<div style="height:5px"></div>
+	<div class="container">
+	<div style="height:50px" align="center" >
+	<label><font size="5" style="color:white" >ROOM-APP</font></label>
+	
+	</div>
+	<div align="right">	<a href="#/login"><font style="color:white;size:5px"> Sign In</font></a></div>
+
+	</div> -->
+	<!-- <di
+	<div>
+		<!-- <table>
+			<tr>
+			    <td><a class="btn btn-primary regbut" href="#/login"> Login </a></td>
+			    <td></td>
+			    <td><a href="#/registerPerson" class="btn btn-primary regbut">Register Person</a></td>
+			</tr>
+		</table> -->
+	<!-- </div>
+	</div> -->
+	<div style="height:120px"></div>
+	<div class="row col-md-12">
+
+	<div class="row container-mywish col-md-5" align="ceter" >
+		<form name="RoomregForm" ng-submit="registerRoom()" novalidate>
+		<div align="center"  class="col-md-9 col-md-offset-0 bcwt">
+			<div style="height:30px"></div>
+				<div align="left">
+					<ul class="list-inline">
+						<li class="signup"><a href="#/login">Log In</li>
+  						<li class="loginunderline"><a href="#/registerPerson">Sign Up</a></li>
+					</ul>
+				</div>
+
+			<!-- <div><label style ="color:blue">Register Room</label></div> -->
+		 	 <div ng-show="disproomerr" align="left">
+	          	<span align= "left" style="color:red">Room Name Already Exists</span>
+	          </div>
+	          <md-input-container class="md-block" flex-gt-sm="">
+	            <label>RoomName</label>
+	         <input ng-model="room.Roomname" name="RoomName" ng-focus="clearerror()" ng-blur="checkRoomExists()" required> 
+
+	          </md-input-container>
+	         
+	          <div>
+				<span style="color:red" ng-show="RoomregForm.RoomName.$dirty && RoomregForm.RoomName.$invalid">
+					<span ng-show="RoomregForm.RoomName.$error.required">RoomName  is required.</span>
+				</span>
+			  </div>
+	           <md-input-container class="md-block" flex-gt-sm="">
+	            <label>Address</label>
+	            <input ng-model="room.Address" name = "roomAddr">
+	          </md-input-container>
+	          
+	
+			<!-- <div class="text-center">
+				<button type="submit" class="btn btn-primary text-center" ng-disabled="RoomregForm.$invalid" >Register</button>
+			</div> -->
+		 <div >
+				<button type="submit" class="btn btn-primary text-center" ng-disabled="RoomregForm.$invalid" >Register</button>
+				<a href="#/registerPerson">RegisterPerson</a>
+			</div>
+			<div style="height:10px"></div>
+		</div>
+		</form>
+	</div>
+	</div>
+</body>
+</html>

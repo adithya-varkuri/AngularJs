@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+
+	<div style="height:120px"></div>
+	<div class="row col-md-12">
+
+		<div class="row container-mywish col-md-5" align="ceter" >
+			<form name = "PersonRegister" ng-submit="RegisterPerson()" novalidate>
+	<div align="center"  class="col-md-9 col-md-offset-0 bcwt">
+	<div style="height:30px"></div>
+				<div align="left">
+					<ul class="list-inline">
+						<li class="signup"><a href="#/login">Log In</li>
+  						<li class="loginunderline"><a href="#/registerPerson">Sign Up</a></li>
+					</ul>
+				</div>
+
+				
+						<div style="height:10px"></div>
+						<!-- <div><label style ="color:blue">Register Person</label></div> -->
+						<md-input-container class="md-block" flex-gt-sm="">
+						<label>Room</label>
+						<md-select ng-model="person.roomname" name = "RoomId" required>
+						<md-option ng-repeat="room in roomdetailsList" value="{{room.Roomname}}">
+						{{room.Roomname}}
+					</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block" flex-gt-sm="">
+			<label>Person Name</label>
+			<input ng-model="person.username" name = "PersonName" required>
+		</md-input-container>
+		<div ng-show="disproomerr" align="left">
+			<span align= "left" style="color:red"> UserId Already Exists</span>
+		</div>
+		<md-input-container class="md-block" flex-gt-sm="">
+		<label>User Id</label>
+		<input ng-model="person.userid" name = "UserId" ng-focus="clearerror()" ng-blur="checkUserExists()">
+	</md-input-container>
+
+	<md-input-container class="md-block" flex-gt-sm="">
+	<label>Passwordas</label>
+	<input type="password" ng-model="person.password" name="Password" required>
+</md-input-container>
+<span style="color:red" ng-show="PersonRegister.Password.$dirty && PersonRegister.Password.$invalid">
+	<span ng-show="PersonRegister.Password.$error.required">Password  is required.</span>
+</span>
+<div >
+	<button type="submit" class="btn btn-primary text-center" ng-disabled="PersonRegister.$invalid" >Register</button>
+	<a href="#/registerRoom">RegisterRoom</a>
+</div>
+<div style="height:10px"></div>
+
+
+</div>
+
+</form>
+</div>
+</div>
+</body>
+</html>

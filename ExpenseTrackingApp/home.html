@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+	<script src="Cdnjs/angularmin.js"></script>
+
+	<link rel="stylesheet" href="Css/angular-material.min.css">
+	<!-- <link href="Css/off-canvas.css" rel="stylesheet"> -->
+	<link href="bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet">
+	<link href="font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="Cdnjs/angular-aria.min.js"></script>
+	<script src="Cdnjs/angular-messages.min.js"></script>
+	<script src="Cdnjs/angular-material.min.js"></script>
+	<script src="Cdnjs/angular-route1.4.9.js"></script>
+	<script src = "Cdnjs/ngStorage.js"></script>
+	<script src="Cdnjs/bootstrapui.js"></script>
+	<script src="Cdnjs/angular-animate.js"></script>
+	<script src="Cdnjs/lodash.js"></script>
+    <script src="Css/app.js"></script>
+	<!--<script src="Cdnjs/off-canvas.js"></script>-->
+	
+	
+
+	<script src="Appjs/Rapp.js"></script>
+	<title>AngularJS Routing example</title>
+
+	<style type="text/css">
+		/*div + div {margin-top:10px;}*/
+
+		body{
+			background-color: transparent;
+			 background-image: url("images/room4.jpg"); 
+			  background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		     height: auto;
+		}
+		.bcimage{
+			background-color: #A7906C;
+			height: 120px;
+			width: 100%;
+			position: fixed;
+			z-index: 20;
+    
+		}
+		.bcwt{
+			/*background-color:rgba(137, 196, 224, 0.52);*/
+			/*background-color:#A7906C;*/
+			/*background-color:#E7DFD3;*/
+			background-color:white;
+			
+			/*background-color: white;*/
+			box-shadow: 10px 10px 5px #0B170E;
+			/*box-shadow: 0 0 5px 2px #0B170E;*/
+		}
+		.boxtext{
+			color: rgb(237, 228, 228);
+		}
+
+		.regbut{
+			background-color: transparent;
+		}
+		.regbut:hover{
+			background-color: rgb(128, 128, 128);
+		}
+		.wcolor{
+			text-color:white;
+		}
+		.gap{
+			height: 20px;
+		}
+		.hgap{
+			height:150px
+		}
+
+@media only screen and (max-width: 768px) { 
+	.container-mywish{
+			margin-left: 23px;	
+			margin-right:23px;
+		}
+		.main-content{
+	background-color: #A7906C;
+	height: auto;
+}
+.sideopen{
+			width: 50%;
+			height: 700px;
+			background: white;
+			border-width: 1px;
+			border-color: blue;
+			top: 140px;
+			float: left;
+			position: absolute;
+			transition:1s all;
+			z-index: 20;
+
+		}
+ }
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and(min-width: 992px) { 
+	.container-mywish{
+			margin-left: 300px;	
+			margin-right:300px;
+		}
+		.main-content{
+	background-color: #A7906C;
+	height: auto;
+}
+.sideopen{
+			width: 50%;
+			height: 700px;
+			background: white;
+			border-width: 1px;
+			border-color: blue;
+			top: 140px;
+			float: left;
+			position: absolute;
+			transition:1s all;
+			z-index: 20;
+
+		}
+
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) { 
+
+.container-mywish{
+			margin-left: 300px;	
+			margin-right:300px;
+		}
+		.main-content{
+	background-color: #A7906C;
+	height: auto;
+}
+.sideopen{
+			width: 20%;
+			height: 700px;
+			background: white;
+			border-width: 1px;
+			border-color: blue;
+			top: 140px;
+			float: left;
+			position: absolute;
+			transition:1s all;
+			z-index: 20;
+
+		}
+ }
+
+
+		
+		.alinline{
+			display: inline;
+		}
+
+		.side{
+			width: 50%;
+			height: 700px;
+			background: blue;
+			float: left;
+			position: absolute;
+			transition:1s all;
+			display: none;
+
+		}
+		
+		.fa-sign-in{
+			color: white;
+		}
+
+		.transparent{
+			/*background-color:transparent;*/
+			opacity: 0.6;
+		}
+
+		.header{
+			background-color: black;
+			
+		}
+		
+	.posamount{
+		color: white
+	}
+	.negamount{
+		color: #b90808
+	}
+
+	.loginunderline{
+		border-bottom:2px solid #00D7FF;
+		/*text-decoration: none;*/
+		/*text-color:#00D7FF;*/
+	}
+	.loginunderline a{
+		color:#00D7FF;
+		font-size: 20px;
+	}
+
+	.loginunderline a:hover{
+    text-decoration: none;
+}
+.signup a{
+	color: #b2bac2;
+	font-size: 20px;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: #00D7FF;
+}
+md-select:not(.md-input-invalid).md-input-focused .md-select {
+    border-color: #00D7FF;
+}
+/*md-input-container label:not(.md-no-float){
+color:#00D7FF;
+}*/
+
+/*md-input-container.md-default-theme label, 
+ md-input-container.md-default-theme .md-placeholder{
+    color:#00D7FF;
+}*/
+
+
+	</style>
+</head>
+
+<body ng-app="sampleApp" ng-controller = "homecontroller as ctrl" >
+<!-- <div style="height:120px" class="header">
+	
+
+
+</div -->
+<div ng-show="display">
+	<div ng-class="sideclass" >
+		<div>
+		<div align="right">
+		<span ng-click="myFunction()"><i class="fa fa-times-circle"></i></span>
+		</div>
+		<div style="height:30px"></div>
+			<div align="center" style="background-color: #A7906C;">
+				<label>Select Report</label>
+			</div>
+			<div >
+				<div class="list-group">
+					<a href="#UserReport" ng-click="myFunction()" class="list-group-item">User Report</a>
+					<a href="#PersonMonthReport" ng-click="myFunction()" class="list-group-item">Person Month Report</a>
+					<a href="#RoomReport" ng-click="myFunction()"  class="list-group-item">Room Report</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+<div>
+			<div ng-view></div>
+
+</div>
+</body>
+</html>
+
+
+<!-- https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make -->

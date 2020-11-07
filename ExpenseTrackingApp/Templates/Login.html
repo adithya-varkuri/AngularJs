@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- <div align="center" class="bcimage" style="height:100px">
+	<div style="height:5px"></div>
+		<div align="center">
+		<label><font size="5" style="color:white" >ROOM-APP</font></label>
+		</div>
+
+	</div> -->
+	<!-- <div style="height:80px" class="transparent"></div> -->
+	<div style="height:120px"></div>
+	<div class="row col-md-12">
+
+		<div class="row container-mywish col-md-5" align="ceter" >
+			<form name="loginform" ng-submit="Login()" novalidate>  
+			<div align="center"  class="col-md-9 col-md-offset-0 bcwt">
+			<div style="height:30px"></div>
+				<div align="left">
+					<ul class="list-inline">
+						<li class="loginunderline"><a href="#/login">Log In</li>
+  						<li class="signup"><a href="#/registerPerson">Sign Up</a></li>
+					</ul>
+				</div>
+					<div align="center"  >
+						<div style="height:10px"></div>
+						<!-- <div><label >Login</label></div> -->
+
+						<md-input-container class="md-block" flex-gt-sm="">
+						<label>UserId</label>
+						<md-icon  class="fa fa-user"></md-icon>
+						<input ng-model="person.userid" name="UserId" required>
+					</md-input-container>
+
+					<!-- <div>
+						<span style="color:red" ng-show="loginform.UserId.$dirty && loginform.UserId.$invalid">
+							<span ng-show="loginform.UserId.$error.required">UserId  is required.</span>
+						</span>
+					</div> -->
+					<md-input-container class="md-block" flex-gt-sm="">
+					<label>Password</label>
+
+					<md-icon  class="fa fa-unlock-alt"></md-icon>
+					<input ng-model="person.password"  type="password" name = "Password" required>
+				</md-input-container>
+				<!-- <div>
+					<span style="color:red" ng-show="loginform.Password.$dirty && loginform.Password.$invalid">
+						<span ng-show="loginform.Password.$error.required">UserId  is required.</span>
+					</span>
+				</div> -->
+
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary text-center" ng-disabled="loginform.$invalid" >Sign In</button>
+					<!-- <a href="#/registerPerson">Sign Up</a> -->
+				</div>
+				<div style="height:10px"></div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!-- <div style="height: 500px" class="col-md-6">
+    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides" index="slide.id">
+        <img ng-src="{{slide.path}}" style="margin:auto;">
+       <div class="carousel-caption">
+          <h4>Slide {{slide.id}}</h4>
+          <p>{{slide.text}}</p>
+        </div> 
+      </uib-slide>
+    </uib-carousel>
+  </div> -->
+
+</div>
+</body>
+</html>
